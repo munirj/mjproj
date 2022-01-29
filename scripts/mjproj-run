@@ -3,6 +3,8 @@
 
 def try_me():
     from datetime import date
+
+
     from datetime import datetime, timedelta
 
     now = datetime.now()
@@ -19,12 +21,8 @@ def try_me():
 
     days_to_demo = (demo_day - now) / timedelta(days=1)
     hours_to_demo = (midnight - now + timedelta(hours=10)) / timedelta(hours=1)
-    mins_to_demo = (midnight - now + timedelta(hours=10) -
-                    timedelta(hours=hours_to_demo)) / timedelta(minutes=1)
 
     print(
-        f'It is {days_to_demo:.0f} days, {hours_to_demo:.0f} hours and {mins_to_demo:.0f} minutes to demo day'
-    )
-
+        f'It is {days_to_demo:.0f} days and {hours_to_demo:.0f} hours to demo day')
 if __name__ == '__main__':
     try_me()

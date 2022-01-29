@@ -1,29 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from datetime import date
-from datetime import datetime, timedelta
+def try_me():
+    from datetime import date
+    from datetime import datetime, timedelta
 
-now = datetime.now()
-demo_time = datetime.min.time()
-demo_date = date(2022, 3, 19)
-demo_day = datetime.combine(demo_date, demo_time) + timedelta(hours=10)
-tomorrow = datetime.now() + timedelta(1)
-midnight = datetime(year=tomorrow.year,
-                    month=tomorrow.month,
-                    day=tomorrow.day,
-                    hour=0,
-                    minute=0,
-                    second=0)
+    now = datetime.now()
+    demo_time = datetime.min.time()
+    demo_date = date(2022, 3, 19)
+    demo_day = datetime.combine(demo_date, demo_time) + timedelta(hours=10)
+    tomorrow = datetime.now() + timedelta(1)
+    midnight = datetime(year=tomorrow.year,
+                        month=tomorrow.month,
+                        day=tomorrow.day,
+                        hour=0,
+                        minute=0,
+                        second=0)
 
-days_to_demo = (demo_day - now) / timedelta(days=1)
-hours_to_demo = (midnight - now + timedelta(hours=10)) / timedelta(hours=1)
-mins_to_demo = (midnight - now + timedelta(hours=10) -
-                timedelta(hours=hours_to_demo)) / timedelta(minutes=1)
+    days_to_demo = (demo_day - now) / timedelta(days=1)
+    hours_to_demo = (midnight - now + timedelta(hours=10)) / timedelta(hours=1)
+    mins_to_demo = (midnight - now + timedelta(hours=10) -
+                    timedelta(hours=hours_to_demo)) / timedelta(minutes=1)
 
-print(
-    f'It is {days_to_demo:.0f} days, {hours_to_demo:.0f} hours and {mins_to_demo:.0f} minutes to demo day'
-)
+    print(
+        f'It is {days_to_demo:.0f} days, {hours_to_demo:.0f} hours and {mins_to_demo:.0f} minutes to demo day'
+    )
 
 if __name__ == '__main__':
     try_me()

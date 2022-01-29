@@ -1,16 +1,14 @@
 def try_me():
-    from datetime import datetime, date, timedelta
+    from datetime import date
+    from datetime import datetime, timedelta
 
-    today = datetime.now()
-    tomorrow = datetime.now() + timedelta(days=1)
-    midnight = datetime(year=tomorrow.year,
-                        month=tomorrow.month,
-                        day=tomorrow.day,
-                        hour=0,
-                        minute=0,
-                        second=0)
+    now = datetime.now()
+    demo_time = datetime.min.time()
+    demo_date = date(2022, 3, 19)
+    demo_day = datetime.combine(demo_date, demo_time) + timedelta(hours=10)
 
-    time_to_midnight = (midnight - today) / timedelta(minutes=1)
-    print(f'It is {time_to_midnight:.0f} minutes to midnight')
+    days_to_demo = (demo_day - now) / timedelta(days=1)
+
+    print(f'It is {days_to_demo:.0f} days to demo day')
 
 try_me()

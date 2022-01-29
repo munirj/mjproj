@@ -21,9 +21,8 @@ hours_to_demo = (midnight - now + timedelta(hours=10)) / timedelta(hours=1)
 mins_to_demo = (midnight - now + timedelta(hours=10) -
                 timedelta(hours=hours_to_demo)) / timedelta(minutes=1)
 
-print(time_to_demo)
 print(
-    f'It is {days_to_demo:.0f} days, {time_to_demo:.0f} hours and {time_to_demo:.0f} minutes to demo day'
+    f'It is {days_to_demo:.0f} days, {hours_to_demo:.0f} hours and {mins_to_demo:.0f} minutes to demo day'
 )
 
 if __name__ == '__main__':
